@@ -1,0 +1,350 @@
+:root {
+    --30color: #FD7028;
+    --60color: white;
+    --10color: #0D0221;
+
+    --title: 'Poppins', sans-serif;
+    --text: 'Inter', sans-serif;
+    --title-weight: 800;
+    --text-weight: 500;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Poppins:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+.hero {
+    background-color: var(--30color);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+    display: grid;
+    grid-template-areas: 
+    "shapeCont imageCont"; 
+    
+/*     grid-template-columns: 1fr 2fr; */
+    grid-template-columns: 40% 60%;
+    z-index: -2;
+
+    overflow-y: hidden;
+}
+
+h1 {
+    font-family: var(--title);
+    font-weight: var(--title-weight);
+    font-size: 3rem;
+    color: var(--60color);
+    margin: 0;
+
+
+}
+
+
+/* 1880 */
+
+/* calc(2vw + 2vh); */
+
+@media (min-width: 768px) {
+    .shapeContainer {
+        background-color: transparent;
+        width: 110%;
+        
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        grid-area: shapeCont;
+        height: 100%;
+        position: relative;
+
+        
+    }
+
+    .imageContainer {
+        grid-area: imageCont;
+        height: 100%;
+        width: auto;
+
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .shape {
+        position: absolute;
+        height: 100%;;
+        left: -100px;
+        top: 0;
+
+        z-index: -1;
+    }
+
+    .titlesContainer {
+        margin-left: 50px;
+    }
+
+    h1 {
+        color: var(--60color);
+        margin: 0;
+
+        font-size: calc(2vw + 2vh + 10px);
+    }
+    
+    .hero p {
+        font-size: calc(1vw + 1vh);
+        line-height: 30px;
+    }
+    
+
+    button {
+/*         height: 40px;
+        width: 22.5px;
+     */
+    
+        height: calc(2vw + 1vh);
+        width: calc(8vw + 2vh);
+
+        margin: 0 auto;
+        cursor: pointer;
+        font: bold;
+        font-size: calc(0.8vw + 0.8vh);
+    }
+    
+    button:first-of-type {
+        background-color: #0D0221;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+    button:last-of-type {
+        border-radius: 30px;
+        background-color: white;
+        border: 1px solid var(--10color);
+    }
+
+
+
+    /* Mara */
+
+    .hero .maraDesktop {
+    width: 90%;
+     height: auto;
+        /* height: calc(35vh + 35vw); */
+
+        position: relative;
+        right: 0;
+    }
+
+    /* Advanced Styles */
+
+        /* Word's white backgrounds */
+    
+        header span:first-of-type, span:last-of-type {
+            background-image: url(../media/orange-background.svg);
+            background-size: 50vw 100vw;
+            background-position: 10% center;
+            margin-left: 5px;
+            color: white;
+        }
+        
+        
+        /* Black text H1 */
+        header span:nth-child(2){
+            color: rgb(0, 0, 0);
+        }
+
+
+        header p {
+            font-family: var(--text);
+            font-weight: light;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: start;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            z-index: 1;
+        }
+        .maraMobile {
+        display: none;
+    }
+
+    .mobileTitle {
+        display: none;
+    }
+
+    .mobileCTAContainer {
+        display: none;
+    }
+
+    .mobileParagraph {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1539px) {
+    .hero {
+    background-color: var(--30color);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+    display: grid;
+    grid-template-areas: 
+    "shapeCont imageCont"; 
+    
+/*     grid-template-columns: 1fr 2fr; */
+    grid-template-columns: 40% 60%;
+    z-index: -2;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.shape {
+    position: absolute;
+    height: 100%;;
+    left: -10px;
+    top: 0;
+
+    z-index: -1;
+}
+
+
+}
+
+
+
+
+
+
+/* Mobile */
+
+
+@media (max-width: 768px) {
+    .hero {
+    background-color: var(--60color);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;;
+    justify-content: space-between;
+    
+    
+/*     grid-template-columns: 1fr 2fr; */
+    grid-template-columns: 40% 60%;
+    z-index: -2;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+    .shapeContainer {
+        display: none;
+    }
+    .maraDesktop {
+        display: none;
+    }
+    .desktopTitle {
+        display: none;
+    }
+
+    
+    .maraMobile {
+        height: calc(8vh + 48vw);
+    }
+
+    .triangleMobile {
+        position: absolute;
+        top: 5vh;
+        left: 0;
+        z-index: -1;
+        width: auto;
+        height: 33vh;
+
+    }
+
+    .mobileTitle {
+    text-align: center;
+    margin-top: 4vh;
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
+    margin-left: 5%;
+    font-size: calc(5vh + 2vw);
+    }
+
+    .mobileTitle span:first-of-type, span:last-of-type {
+        background-image: url(./media/rectangle.svg);
+        color: black;
+    }
+
+    p {
+        font-size: calc(2vh + 1vw);
+        text-align: center;
+    }
+
+    .rectangleMobile {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -10;
+        width: 100%;
+    }
+
+    button {
+        height: 40px;
+        width: 180px;
+    
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+        font: bold;
+        font-size: 20px;
+    }
+    
+    button:first-of-type {
+        background-color: #0D0221;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: -10px;
+    }
+    button:last-of-type {
+        background-color: transparent;
+        border: none;
+    }
+    
+
+/*     .subtitleMobile {
+        position: absolute;
+        bottom: 10vh;
+        z-index: -1;
+    } */
+
+    .mobileParagraph {
+        background-image: url(./media/subtitleMobile.svg);
+        height: 80px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding: 10px;1
+    }
+
+    .mobileParagraph p {
+        color: white;
+    }
+}
